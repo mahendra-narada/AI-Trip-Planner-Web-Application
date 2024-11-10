@@ -10,9 +10,10 @@
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
            		   </div>
+
            		   <div class="div">
            		   		
-           		   		<input type="text" class="input" placeholder="Username">
+           		   		<input type="text" class="input" [(ngModel)]="userName" name="userName" placeholder="Username">
            		   </div>
                    
            		</div>
@@ -23,7 +24,7 @@
                     </div>
                     <div class="div">
                          
-                         <input type="email" class="input" placeholder="Email">
+                         <input type="email" class="input" [(ngModel)]="Email" name="Email" placeholder="Email">
                  </div>
               </div>
 
@@ -33,10 +34,10 @@
            		   </div>
            		   <div class="div">
            		    	
-           		    	<input type="password" class="input" placeholder="Password">
+           		    	<input type="password" class="input" [(ngModel)]="Password" name="password" placeholder="Password">
             	   </div>
             	</div>
-            	<input type="submit" class="btn" value="Register">
+            	<input type="submit" (click)="registerUser()" class="btn" value="Register">
             </form>
         </div>
     </div>

@@ -32,6 +32,7 @@ export class InputPlanComponent {
 
   geminiService:GeminiService = inject(GeminiService);
 
+
   createPrompt(): void {
     this.prompt = `
       Plan a trip to ${this.location}.
@@ -53,7 +54,7 @@ export class InputPlanComponent {
     this.createPrompt();
     this.tripPlan = await this.geminiService.generateText(this.prompt); 
     this.isLoading = false;
-
   }
+  
 
 }
