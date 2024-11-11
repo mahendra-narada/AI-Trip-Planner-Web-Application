@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-trip-plan',
@@ -13,6 +14,13 @@ export class TripPlanComponent {
   constructor(private router: Router) {}
 
   plantrip(): void {
-    this.router.navigate(['/Plan']);
+    const userEmail = localStorage.getItem('userEmail');
+    if (userEmail!==null && userEmail!=='') {
+      this.router.navigate(['/Plan']);
+    }
+    else{
+      Swal.fire('Login in to Site Before Plan the trip','','error');
+    }
+   
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,6 +11,8 @@ import Swal from 'sweetalert2';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+
+  constructor(private router:Router){}
 
   Email:string="";
   password:string="";
@@ -41,7 +44,16 @@ export class LoginComponent {
 
        if (response.ok) {
         const data = await response.json();
-        Swal.fire('Login successFull','','success'); 
+        console.log(
+         data.email);
+         localStorage.setItem('userEmail',data.email);
+        Swal.fire({
+          title: 'Login Successful!',
+          text: 'You have successfully Login. Welcome!',
+          icon: 'success',
+          timer: 2000
+        });
+        this.router.navigate(["/"]);
        }
        else{
         Swal.fire('Invalid credentials','','error');
