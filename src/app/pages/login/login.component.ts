@@ -59,7 +59,7 @@ export class LoginComponent {
         Swal.fire('Invalid credentials','','error');
        }
     } catch (error) {
-      Swal.fire('An Error occured!','','error');
+      Swal.fire('Invalid credentials','','error');
       
     }
 

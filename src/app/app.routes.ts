@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { FAQComponent } from './pages/faq/faq.component';
 import { InputPlanComponent } from './pages/input-plan/input-plan.component';
+import { UserdashboardComponent } from './pages/userdashboard/userdashboard.component';
 
 export const routes: Routes = [
     {
@@ -25,6 +26,10 @@ export const routes: Routes = [
     {
         path:"Plan",
         component:InputPlanComponent
+    },
+    {
+        path:"UserDashBoard",
+        component:UserdashboardComponent
     }
   
 ];

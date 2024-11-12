@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-sample-place',
@@ -7,6 +8,13 @@ import { Component } from '@angular/core';
   templateUrl: './sample-place.component.html',
   styleUrl: './sample-place.component.css'
 })
-export class SamplePlaceComponent {
+export class SamplePlaceComponent  implements OnInit{
+  
+  ngOnInit(){
+    AOS.init();
+  }
+
+  
+  
 
 }
